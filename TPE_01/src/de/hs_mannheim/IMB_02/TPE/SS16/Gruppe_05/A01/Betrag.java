@@ -15,7 +15,7 @@ public class Betrag {
 	long vorkomma;
 
 	/**
-	 * Konstruktor der Klasse Betrag fÃ¼r menge als long
+	 * Konstruktor der Klasse Betrag für menge als long
 	 * 
 	 * @param menge
 	 *            - Geldbetrag
@@ -28,7 +28,7 @@ public class Betrag {
 	}
 
 	/**
-	 * Konstruktor der Klasse Betrag fÃ¼r menge als double
+	 * Konstruktor der Klasse Betrag für menge als double
 	 * 
 	 * @param menge
 	 *            - Geldbetrag
@@ -45,7 +45,7 @@ public class Betrag {
 	 * Konstruktor der Klasse Betrag
 	 * 
 	 * @param a
-	 *            - Betrag, der Ã¼bergeben wird
+	 *            - Betrag, der übergeben wird
 	 */
 	public Betrag(Betrag a) {
 		this.menge = a.getMenge();
@@ -53,7 +53,7 @@ public class Betrag {
 	}
 
 	/**
-	 * Methode, die die Waehrung zurÃ¼ckgibt
+	 * Methode, die die Waehrung zurückgibt
 	 * 
 	 * @return Waehrung
 	 */
@@ -62,7 +62,7 @@ public class Betrag {
 	}
 
 	/**
-	 * Methode, die den Geldbetrag zurÃ¼ckgibt
+	 * Methode, die den Geldbetrag zurückgibt
 	 * 
 	 * @return Geldbetrag
 	 */
@@ -71,7 +71,7 @@ public class Betrag {
 	}
 
 	/**
-	 * Methode, die zurÃ¼ckgibt, ob der Geldbetrag positiv, negativ oder gleich
+	 * Methode, die zurückgibt, ob der Geldbetrag positiv, negativ oder gleich
 	 * Null ist
 	 * 
 	 * @return -1, wenn negativer Betrag; 1, wenn positiver Betrag; 0, wenn
@@ -195,7 +195,7 @@ public class Betrag {
 	}
 
 	/**
-	 * Methode, die Informationen zu einem Betrag als String zurÃ¼ckgibt
+	 * Methode, die Informationen zu einem Betrag als String zurückgibt
 	 * 
 	 * @return s - String, der die Menge als double, die Weahrung und das Krzel
 	 *         eines Betrags beinhaltet
@@ -207,7 +207,7 @@ public class Betrag {
 	}
 
 	/**
-	 * Methode, die den Betrag als double zurÃ¼ckliefert
+	 * Methode, die den Betrag als double zurückliefert
 	 * 
 	 * @param a
 	 *            - Betrag a

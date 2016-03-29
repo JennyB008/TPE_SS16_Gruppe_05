@@ -73,7 +73,7 @@ public class Konto extends Betrag {
 	}
 
 	/**
-	 * Methode, die BetrÃ¤ge aus das Konto zu buchen bzw. BetrÃ¤ge abzubuchen
+	 * Methode, die Beträge aus das Konto zu buchen bzw. Beträge abzubuchen
 	 * 
 	 * @param b
 	 *            - Betrag, der auf oder abgebucht werden soll
@@ -112,7 +112,7 @@ public class Konto extends Betrag {
 	}
 
 	/**
-	 * Methode, die einen Ãœberblick Ã¼ber verschiedene Buchungen eines Kontos
+	 * Methode, die einen Überblick über verschiedene Buchungen eines Kontos
 	 * bietet
 	 * 
 	 * @return kontoauszug

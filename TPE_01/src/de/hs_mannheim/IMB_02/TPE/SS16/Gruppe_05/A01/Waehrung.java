@@ -54,7 +54,7 @@ public class Waehrung extends Waehrungen {
 	}
 
 	/**
-	 * Methode, die Informationen zu eine Waehrung als String zurÃ¼ck gibt
+	 * Methode, die Informationen zu eine Waehrung als String zurück gibt
 	 * 
 	 * @return s - String, der den Namen einer Waehrung, deren Kuerzel und den
 	 *         Wechselkurs zum Dollarangibt
@@ -67,12 +67,12 @@ public class Waehrung extends Waehrungen {
 	}
 
 	/**
-	 * Methode, die einen Betrag in eine andere WÃ¤hrung umrechnet
+	 * Methode, die einen Betrag in eine andere Währung umrechnet
 	 * 
 	 * @param b
 	 *            - der Betrag, der umgerechnet werden soll
 	 * @param z
-	 *            - die WÃ¤hrung, in die umgerechnet werden soll
+	 *            - die Währung, in die umgerechnet werden soll
 	 * @return neu - der umgerechnete Wert des Betrags
 	 */
 	public long umrechnen(Betrag b, Waehrung z) {
@@ -101,6 +101,12 @@ public class Waehrung extends Waehrungen {
 		return result;
 	}
 
+	/**
+	 * Methode, die zwei Objetkte miteinander vergleicht
+	 * 
+	 * @return ture, wenn die Objekte gleich sind; false, wenn die Objekte nicht
+	 *         gleich sind
+	 */
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -129,6 +135,5 @@ public class Waehrung extends Waehrungen {
 			return false;
 		return true;
 	}
-
 
 }
