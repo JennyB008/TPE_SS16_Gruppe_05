@@ -21,29 +21,13 @@ public class Waehrung extends Waehrungen {
 	 *            - Wechselkurs in Dollar
 	 */
 	public Waehrung(String name, String kuerzel, double kurs) {
-		super(name, kuerzel, kurs);
+		this.name = name;
+		this.kuerzel = kuerzel;
+		this.kurs = kurs;
 	}
 
 	/**
-	 * Methode, die das Kuerzel der Waehrugn liefert
-	 * 
-	 * @return Kuerzel der Waehrung
-	 */
-	public String getKuerzel() {
-		return kuerzel;
-	}
-
-	/**
-	 * Methode, die den Kurs der Waehrugn liefert
-	 * 
-	 * @return Kurs der Waehrung
-	 */
-	public double getKurs() {
-		return kurs;
-	}
-
-	/**
-	 * Methode, die den Namen der Waehrugn liefert
+	 * Methode, die den Namen der Waehrung liefert
 	 * 
 	 * @return Name der Waehrung
 	 */
@@ -52,25 +36,59 @@ public class Waehrung extends Waehrungen {
 	}
 
 	/**
-	 * Methode, die einen Betrag in eine andere Waehrugn umrechnet und diesen
-	 * dann zur�ckliefert
+	 * Methode, die das Kuerzel der Waehrung liefert
+	 * 
+	 * @return Kuerzel der Waehrung
+	 */
+	public String getKuerzel() {
+		return this.kuerzel;
+	}
+
+	/**
+	 * Methode, die den Kurs der Waehrung liefert
+	 * 
+	 * @return Kurs der Waehrung
+	 */
+	public double getKurs() {
+		return kurs;
+	}
+
+	/**
+	 * Methode, die Informationen zu eine Waehrung als String zurück gibt
+	 * 
+	 * @return s - String, der den Namen einer Waehrung, deren Kuerzel und den
+	 *         Wechselkurs zum Dollarangibt
+	 */
+	@Override
+	public String toString() {
+		String s = this.getName() + " " + "[" + this.getKuerzel() + "] 1 $ =" + " " + this.getKurs() + " "
+				+ this.getKuerzel();
+		return s;
+	}
+
+	/**
+	 * Methode, die einen Betrag in eine andere Währung umrechnet
 	 * 
 	 * @param b
-	 *            - Betrag b, der umgerechent wird
+	 *            - der Betrag, der umgerechnet werden soll
 	 * @param z
-	 *            - Waehrung z, in die umgerechnet wird
-	 * @return umgerechneter Betrag
+	 *            - die Währung, in die umgerechnet werden soll
+	 * @return neu - der umgerechnete Wert des Betrags
 	 */
 	public long umrechnen(Betrag b, Waehrung z) {
-		long neu = (long) ((b.menge * (double) this.kurs) / z.kurs);
+		double temp1 = (double) (b.menge / 100.0);
+		double temp2 = this.kurs;
+		double temp3 = z.kurs;
+		double temp4 = temp1 / temp2;
+		long neu = (long) (temp4 * temp3);
 		return neu;
 	}
 
-	@Override
-	public String toString() {
-		return this.getName() + " " + "[" + this.getKuerzel() + "] 1 $ =" + " " + this.getKurs();
-	}
-
+	/**
+	 * Methode, die den Hash Code eines Objekts ermittelt
+	 * 
+	 * @return result - der Hash Code des Objekts
+	 */
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -83,6 +101,11 @@ public class Waehrung extends Waehrungen {
 		return result;
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -106,5 +129,6 @@ public class Waehrung extends Waehrungen {
 			return false;
 		return true;
 	}
+
 
 }

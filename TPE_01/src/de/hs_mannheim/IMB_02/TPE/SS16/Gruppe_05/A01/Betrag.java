@@ -9,27 +9,26 @@ package de.hs_mannheim.IMB_02.TPE.SS16.Gruppe_05.A01;
 public class Betrag {
 
 	long menge;
-	Waehrung w;
 	double prozentwert;
+	Waehrung w;
 	double promillewert;
 	long vorkomma;
 
 	/**
-	 * Konstruktor der Klasse Betrag für menge als long
+	 * Konstruktor der Klasse Betrag fÃ¼r menge als long
 	 * 
 	 * @param menge
 	 *            - Geldbetrag
 	 * @param w
 	 *            - Waehrung des Geldbetrags
 	 */
-
 	Betrag(long menge, Waehrung w) {
 		this.menge = menge;
 		this.w = w;
 	}
 
 	/**
-	 * Konstruktor der Klasse Betrag für menge als double
+	 * Konstruktor der Klasse Betrag fÃ¼r menge als double
 	 * 
 	 * @param menge
 	 *            - Geldbetrag
@@ -42,40 +41,44 @@ public class Betrag {
 		this.w = w;
 	}
 
+	/**
+	 * Konstruktor der Klasse Betrag
+	 * 
+	 * @param a
+	 *            - Betrag, der Ã¼bergeben wird
+	 */
 	public Betrag(Betrag a) {
 		this.menge = a.getMenge();
 		this.w = a.getWaehrung();
 	}
 
 	/**
-	 * Methode, die die Waehrung zurückgibt
+	 * Methode, die die Waehrung zurÃ¼ckgibt
 	 * 
 	 * @return Waehrung
 	 */
-
 	public Waehrung getWaehrung() {
 		return w;
 	}
 
 	/**
-	 * Methode, die den Geldbetrag zurückgibt
+	 * Methode, die den Geldbetrag zurÃ¼ckgibt
 	 * 
 	 * @return Geldbetrag
 	 */
-
 	public long getMenge() {
 		return menge;
 	}
 
 	/**
-	 * Methode, die zurückgibt, ob der Geldbetrag positiv, negativ oder gleich
+	 * Methode, die zurÃ¼ckgibt, ob der Geldbetrag positiv, negativ oder gleich
 	 * Null ist
 	 * 
 	 * @return -1, wenn negativer Betrag; 1, wenn positiver Betrag; 0, wenn
 	 *         Betrag gleich Null ist
 	 */
-
 	public int getVorzeichen() {
+
 		if (menge < 0) {
 			return -1;
 		} else if (menge > 0) {
@@ -86,92 +89,87 @@ public class Betrag {
 	}
 
 	/**
-	 * Methode, die zwei Betraege addiert
+	 * Methode, die einen Betrag zu einen anderen Betrag aufaddiert
 	 * 
-	 * @param a
-	 *            - Betrag a
 	 * @param b
-	 *            - Betrag b, der zu a addiert werden soll
-	 * @param aw
-	 *            - Waehrung von Betrag a
-	 * @param bw
-	 *            - Waehrung von Betrag b
-	 * @return Ergebnis der Addition
+	 *            - Betrag, der addiert werden soll
+	 * @return this.menge - Ergebnis der Addition
 	 */
+	public long addiere(Betrag b) {
 
-	public long addiere(Betrag a, Betrag b, Waehrung aw, Waehrung bw) {
-		long add = a.getMenge() + (bw.umrechnen(a, aw));
-		return add;
+		if (this.getWaehrung() == b.getWaehrung()) {
+			this.menge = this.menge + b.menge;
+		} else {
+			this.menge = this.menge + b.getWaehrung().umrechnen(b, this.getWaehrung());
+		}
+		return this.menge;
 	}
 
 	/**
-	 * Methode, die zwei Betraege subtrahiert
+	 * Methode, die von einem Betrag einen anderen Betrag abzieht
 	 * 
-	 * @param a
-	 *            - Betrag a
 	 * @param b
-	 *            - Betrag b, der zu a addiert werden soll
-	 * @param aw
-	 *            - Waehrung von Betrag a
-	 * @param bw
-	 *            - Waehrung von Betrag b
-	 * @return Ergebnis der Subtraktion
+	 *            - Betrag der abgezogen werden soll
+	 * @return this.menge - Ergebnis der Subtraktion
 	 */
+	public long subtrahiere(Betrag b) {
 
-	public long subtrahiere(Betrag a, Betrag b, Waehrung aw, Waehrung bw) {
-		long sub = a.getMenge() - (bw.umrechnen(a, aw));
-		return sub;
+		if (this.getWaehrung() == b.getWaehrung()) {
+			this.menge = this.menge - b.menge;
+		} else {
+			this.menge = this.menge - b.getWaehrung().umrechnen(b, this.getWaehrung());
+		}
+		return this.menge;
 	}
 
 	/**
-	 * Methode, die einen Betrag mit einer double-Zahl multipliziert
+	 * Methode, die einen Betrag mit einer double Zahl multipliziert
 	 * 
-	 * @param menge
-	 *            - Betrag menge
 	 * @param m
-	 *            - Zahl (double), mit der multipliziert wird
+	 *            - Zahl, mit der der Betrag multipliziert werden soll
+	 * @return this.menge - Ergebnis der Mutiplikation
 	 */
-	public void multipliziere(long menge, double m) {
-		this.menge = (long) (menge * m);
+	public long multipliziere(double m) {
+		this.menge = (long) (this.menge * m);
+		return this.menge;
 	}
 
 	/**
-	 * Methode, die einen Betrag mit einer int-Zahl multipliziert
+	 * Methode, die einen Betrag mit eine int Zahl multipliziert
 	 * 
-	 * @param menge
-	 *            - Betrag menge
 	 * @param m
-	 *            - Zahl (int), mit der multipliziert wird
+	 *            - Zahl, mit der der Betrag multipliziert werden soll
+	 * @return this.menge - Ergebnis der Multiplikation
 	 */
-	public void multipliziere(long menge, int m) {
-		this.menge = menge * m;
+	public long multipliziere(int m) {
+		this.menge = this.menge * m;
+		return this.menge;
 	}
 
 	/**
-	 * Methode, die einen bestimmten Prozentsatz von einem Betrag zurück liefert
+	 * Methode, die einen Prozentwert eines Betrags ermittelt
 	 * 
-	 * @param menge
-	 *            - Betrag
 	 * @param prozent
-	 *            - Prozentsatz
-	 * @return Prozentwert vom Betrag
+	 *            - gibt an wie viel Prozent von einem Betrag berechnet werden
+	 *            sollen
+	 * @return prozentwert - Prozentwert des Betrags
 	 */
-	public double prozent(long menge, double prozent) {
-		prozentwert = (menge / 100) * prozent;
+	public double prozent(double prozent) {
+		prozentwert = (this.menge / 100) * prozent;
 		return prozentwert;
 	}
 
 	/**
-	 * Methode, die einen bestimmten Promillesatz von einem Betrag zurückliefert
+	 * Methode, die eine Promillewert eines Betrags ermittelt
 	 * 
-	 * @param menge
-	 *            - Betrag
 	 * @param promille
-	 *            - Promillesatz
-	 * @return Promillewert vom Betrag
+	 *            - gibt an wie viel Promille von einem Betrag berechnet werden
+	 *            sollen
+	 * @return Promillewert des Betrags
 	 */
-	public double promille(long menge, double promille) {
-		promillewert = (menge / 1000) * promille;
+	public double promille(double promille) {
+		double temp = (double) this.menge;
+		promillewert = (temp / 1000) * promille;
 		return promillewert;
 	}
 
@@ -189,31 +187,43 @@ public class Betrag {
 	 * 
 	 * @return Nachkommabetrag
 	 */
-	public double getNachkomma(Betrag a) {
+	public double getNachkomma() {
 
-		double temp = getAsDouble(a);
-		double temp2 = temp - a.getVorzeichen();
+		double temp1 = this.getAsDouble();
+		double temp2 = (temp1 - this.getVorkomma());
 		return temp2;
 	}
 
+	/**
+	 * Methode, die Informationen zu einem Betrag als String zurÃ¼ckgibt
+	 * 
+	 * @return s - String, der die Menge als double, die Weahrung und das Krzel
+	 *         eines Betrags beinhaltet
+	 */
 	@Override
 	public String toString() {
-		return getAsDouble(this) + " " + this.getWaehrung().getKuerzel();
+		String s = this.getAsDouble() + " " + this.getWaehrung().getKuerzel();
+		return s;
 	}
 
 	/**
-	 * Methode, die den Betrag als double zurückliefert
+	 * Methode, die den Betrag als double zurÃ¼ckliefert
 	 * 
-	 * @param a - Betrag a
+	 * @param a
+	 *            - Betrag a
 	 * @return Betrag a als double-Zahl
 	 */
-	public double getAsDouble(Betrag a) {
-
-		long temp2 = a.getMenge();
-		double temp = (double) (temp2 / 100);
-		return temp;
+	public double getAsDouble() {
+		double temp1 = (double) this.getMenge();
+		double temp2 = (temp1 / 100);
+		return temp2;
 	}
 
+	/**
+	 * * Methode, die den Hash Code eines Objekts ermittelt
+	 * 
+	 * @return result - der Hash Code des Objekts
+	 */
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -223,6 +233,12 @@ public class Betrag {
 		return result;
 	}
 
+	/**
+	 * Methode, die zwei Objetkte miteinander vergleicht
+	 * 
+	 * @return ture, wenn die Objekte gleich sind; false, wenn die Objekte nicht
+	 *         gleich sind
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)

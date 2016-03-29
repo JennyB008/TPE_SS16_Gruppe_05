@@ -29,29 +29,13 @@ public class Waehrungen {
 	private String name;
 	private String kuerzel;
 	private double kurs;
-	
-	
-	/**
-	 * Konstruktor der Klasse Waehrungen
-	 * 
-	 * @param name
-	 *            - Name der Waehrung
-	 * @param kuerzel
-	 *            - Kuerzel der Waehrung
-	 * @param kurs
-	 *            - Wechselkurs in Dollar
+
+	/*
+	 * Waehrung usDollar = new Waehrung("US-Dollar", "$" , 1.0000); Waehrung
+	 * euro = new Waehrung("Euro" , "â‚¬" , 1.2690); Waehrung yen = new
+	 * Waehrung("Yen" , "Â¥" , 0.0091); Waehrung rubel = new Waehrung ("Rubel" ,
+	 * "RUB" , 0.0255); Waehrung schweizerFranken = new Waehrung (
+	 * "Schweizer Franken" , "CHF" , 1.0509);
 	 */
-	
-	public Waehrungen(String name, String kuerzel, double kurs){
-		this.name = " ";
-		this.kuerzel = " ";
-		this.kurs = 0.0;
-	}
-	
-	Waehrungen usDollar = new Waehrungen("US-Dollar", "$" , 1.0000);
-	Waehrungen euro = new Waehrungen("Euro" , "€" , 1.2690);
-	Waehrungen yen = new Waehrungen("Yen" , "¥" , 0.0091);
-	Waehrungen rubel = new Waehrungen ("Rubel" , "RUB" , 0.0255);
-	Waehrungen schweizerFranken = new Waehrungen ("Schweizer Franken" , "CHF" , 1.0509);
 	
 }
