@@ -34,7 +34,7 @@ public class Member {
 	}
 
 	/**
-	 * Methode, die die MitggliedsID zurück gibt
+	 * Methode, die die MitggliedsID zurueck gibt
 	 * 
 	 * @return MitgliederID
 	 */
@@ -103,8 +103,8 @@ public class Member {
 	}
 
 	/**
-	 * Methode, die vergleicht, ob zwei Mitglieder gleich sind. Über die
-	 * MitgliedsID, da diese für jedes Mitlgied eindeutig ist.
+	 * Methode, die vergleicht, ob zwei Mitglieder gleich sind. Ueber die
+	 * MitgliedsID, da diese fuer jedes Mitlgied eindeutig ist.
 	 * 
 	 * @param member
 	 *            - Mitglied, mit dem verglichen wird
@@ -126,8 +126,8 @@ public class Member {
 	 */
 	@Override
 	public String toString() {
-		String s = "MitgliedsID: " + mitgliederID + " Nachname: " + nachname + " Vorname: " + vorname
-				+ " Angzahl der Mitgliedsjahre: " + anzahlMitgliedsjahre;
+		String s = "MitgliedsID: " + mitgliederID + ", Nachname: " + nachname + ", Vorname: " + vorname
+				+ ", Angzahl der Mitgliedsjahre: " + anzahlMitgliedsjahre + "\n";
 		return s;
 	}
 

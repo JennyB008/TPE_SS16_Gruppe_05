@@ -9,15 +9,23 @@ import java.util.Map;
  * @author Dominique Bost, Jennifer Brenner, Yjvesa Sejfijaj
  *
  */
-public class MembershipList<K, V> extends HashMap<K, V> implements Map<K, V> {
+public class MembershipList extends HashMap<Integer, Member>implements Map<Integer, Member> {
 
-	public V put(Member m) {
-		K k = (K) new Integer(m.getMitgliederID());
-		return put(k, (V) m);
+	private String key;
+	private Member value;
+
+	public MembershipList() {
+		super();
 	}
 
-	@Override
-	public String toString() {
-		return super.toString();
+	public MembershipList(int i) {
+		super(i);
 	}
+
+	private static final long serialVersionID = 202395904055089545L;
+
+	public Member put(Member member) {
+		return put(member.getMitgliederID(), member);
+	}
+
 }

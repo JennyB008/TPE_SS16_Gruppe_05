@@ -75,7 +75,7 @@ public class MemberTest {
 	@Test
 	public void testToString() {
 		Member m1 = new Member(1, "Schmitt", "Peter", 4);
-		String s = "MitgliedsID: 1 Nachname: Schmitt Vorname: Peter Angzahl der Mitgliedsjahre: 4";
+		String s = "MitgliedsID: 1, Nachname: Schmitt, Vorname: Peter, Angzahl der Mitgliedsjahre: 4";
 		assertEquals(s, m1.toString());
 	}
 
