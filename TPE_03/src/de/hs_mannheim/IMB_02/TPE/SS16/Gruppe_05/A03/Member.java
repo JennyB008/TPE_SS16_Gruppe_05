@@ -2,7 +2,7 @@ package de.hs_mannheim.IMB_02.TPE.SS16.Gruppe_05.A03;
 
 /**
  * Klasse "Member", die ein Vereinsmitlgied des Kryptoanalytiker e.V. und seine
- * persönlichen Daten darstellt.
+ * persoenlichen Daten darstellt.
  * 
  * @author Dominique Bost, Jennifer Brenner, Yjvesa Sejfijaj
  *
@@ -18,7 +18,7 @@ public class Member {
 	 * Konstruktor der Klasse "Member".
 	 * 
 	 * @param mitgliederID
-	 *            - Mitgliedsnummer, die jedes Mitglied automatisch erhält
+	 *            - Mitgliedsnummer, die jedes Mitglied automatisch erhaelt
 	 * @param nachname
 	 *            - Nachname des Mitglieds
 	 * @param vorname
@@ -43,7 +43,7 @@ public class Member {
 	}
 
 	/**
-	 * Methode, die den Nachnamen eines Mitglieds zurück gibt
+	 * Methode, die den Nachnamen eines Mitglieds zurueck gibt
 	 * 
 	 * @return Nachname des Mitglieds
 	 */
@@ -64,7 +64,7 @@ public class Member {
 	}
 
 	/**
-	 * Methode, die den Vornamen eines Mitglieds zurück gibt
+	 * Methode, die den Vornamen eines Mitglieds zurueck gibt
 	 * 
 	 * @return Vorname des Mitglieds
 	 */
@@ -83,7 +83,7 @@ public class Member {
 	}
 
 	/**
-	 * Methode, die die Anzahl der Mitgliedsjahre zurück gibt
+	 * Methode, die die Anzahl der Mitgliedsjahre zurueck gibt
 	 * 
 	 * @return anzahlMitgliedsjahre - Anzahl an Jahren, die eine Person Mitglied
 	 *         ist
@@ -127,10 +127,16 @@ public class Member {
 	@Override
 	public String toString() {
 		String s = "MitgliedsID: " + mitgliederID + ", Nachname: " + nachname + ", Vorname: " + vorname
-				+ ", Angzahl der Mitgliedsjahre: " + anzahlMitgliedsjahre + "\n";
+				+ ", Anzahl der Mitgliedsjahre: " + anzahlMitgliedsjahre + "\n";
 		return s;
 	}
 
+	/**
+	 * * Methode, die den Hash Code eines Objekts ermittelt
+	 * 
+	 * @return result - der Hash Code des Objekts
+	 */
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -142,6 +148,13 @@ public class Member {
 		return result;
 	}
 
+	/**
+	 * Methode, die zwei Objetkte miteinander vergleicht
+	 * 
+	 * @return ture, wenn die Objekte gleich sind; false, wenn die Objekte nicht
+	 *         gleich sind
+	 */
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)

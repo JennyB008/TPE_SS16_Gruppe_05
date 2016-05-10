@@ -21,17 +21,17 @@ public class ClubManagement {
 		Member simpsonB = new Member(5, "Simpson", "Bart", 9);
 		Member simpsonL = new Member(3, "Simpson", "Lisa", 5);
 		
-		//Mitglieder in Vereinsliste einfügen
+		//Mitglieder in Vereinsliste einfuegen
 		liste1.put(kochA);
 		liste1.put(mustermannH);
 		liste1.put(simpsonB);
 		liste1.put(simpsonL);
 		
-		//Länge der Vereinsliste und Mitglieder ausgeben
-		System.out.println("Länge der ersten Liste: " + liste1.size() + "\n");
-		System.out.println("Inhalt der ersten Liste: \n " + liste1 + "\n");
+		//Laenge der Vereinsliste und Mitglieder ausgeben
+		System.out.println("Laenge der ersten Liste: " + liste1.size() + "\n");
+		System.out.println("Erste Liste: \n " + liste1 + "\n");
 	
-		//Mitglied mit ID 2 löschen
+		//Mitglied mit ID 2 loeschen
 		liste1.remove(2);
 		
 		//neue Vereinsliste (Vereinsliste 2) erstellen
@@ -40,26 +40,26 @@ public class ClubManagement {
 		//Kopieren der alten Liste	
 		liste2 = (MembershipList) liste1.clone();
 		
-		//neues Mitglied erstellen und in Liste 2 einfügen
+		//neues Mitglied erstellen und in Liste 2 einfuegen
 		Member simpsonLi = new Member(2, "Simpson", "Lisa", 5);
 		liste2.put(simpsonLi);
 		
-		//Prüfen der Existenz von Mitglied mit ID 2 in beiden Listen
-		System.out.println("Erste Liste - Mitglied mit Nummer 2: " + liste1.get(2));
-		System.out.println("Zweite Liste - Mitglied mit Nummer 2: " + liste2.get(2));
+		//Pruefen der Existenz von Mitglied mit ID 2 in beiden Listen
+		System.out.println("Mitglied mit ID 2 in Vereinsliste 1: " + liste1.get(2));
+		System.out.println("Mitglied mit ID 2 in Vereinsliste 2: " + liste2.get(2));
 		
 		//Mitglied mit ID 5 in Vereinsliste 2
-		System.out.println("Zweite Liste - Mitglied mit Nummer 5: " + liste2.get(5));
+		System.out.println("Mitglied mit ID 5 in Vereinsliste 2: " + liste2.get(5));
 		
-		//Änderung des Vornames in Günter
-		liste1.get(5).setVorname("Günter");
+		//Aenderung des Vornames in Guenter
+		liste1.get(5).setVorname("Guenter");
 		System.out.println(liste2.get(5));
 		
 		//Mitglieder aus Vereinsliste 1 und 2 ausgeben
 		System.out.println("Erste Liste: " + liste1 + "\n");
 		System.out.println("Zweite Liste: " + liste2 + "\n");
 		
-		//Mitglied mit ID 5 aus Vereinsliste 2 löschen
+		//Mitglied mit ID 5 aus Vereinsliste 2 loeschen
 		liste2.remove(5);
 		
 		//Mitglieder der 1. und 2. Liste ausgeben
@@ -69,7 +69,7 @@ public class ClubManagement {
 		//Beide Listen leeren und Länge ausgeben
 		liste1.clear();
 		liste2.clear();
-		System.out.println("Länge der ersten Liste: " + liste1.size());
-		System.out.println("Länge der zweiten Liste: " + liste2.size());
+		System.out.println("Laenge der ersten Liste: " + liste1.size());
+		System.out.println("Laenge der zweiten Liste: " + liste2.size());
 	}
 }
